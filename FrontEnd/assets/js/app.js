@@ -1,4 +1,4 @@
-var ApiUrl = "http://localhost:5678/api/";
+var apiUrl = "http://localhost:5678/api/";
 
 function updateGallery(works) {
     const gallery = document.getElementsByClassName('gallery')[0]
@@ -24,16 +24,15 @@ let allWorks = []
 let categories = []
 
 async function fetchCategories() {
-    return fetch(ApiUrl + "categories")
+    return fetch(apiUrl + "categories")
         .then(response => response.json())
         .then(categoriesData => {
             return categoriesData;
         })
 };
 
-function fetchWorks() {
-    const apiURL = 'http://localhost:5678/api/works';
-    fetch(apiURL)
+function fetchWorks() { 
+    fetch(apiUrl + "works")
         .then(response => response.json())
         .then(works => {
             allWorks = works;
@@ -71,7 +70,7 @@ function filterHotelsClick() {
     updateGallery(filtered)
 };
 
-fetchCategories('http://localhost:5678/api/categories')
+fetchCategories(apiUrl + "categories")
     .then(categoriesData => {
         categories = categoriesData;
         fetchWorks();
