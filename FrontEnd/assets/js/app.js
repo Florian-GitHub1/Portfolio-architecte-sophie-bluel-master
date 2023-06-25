@@ -1,4 +1,7 @@
-var apiUrl = "http://localhost:5678/api/";
+const apiUrl = "http://localhost:5678/api/";
+const errorContainer = document.getElementById('errorContainer') ;
+const galleryDiv = document.getElementById('galleryContainer');
+filtersError = document.getElementById('filtersError');
 
 function updateGallery(works) {
     const gallery = document.getElementsByClassName('gallery')[0]
@@ -28,15 +31,28 @@ async function fetchCategories() {
         .then(response => response.json())
         .then(categoriesData => {
             return categoriesData;
-        })
+        });
 };
 
 function fetchWorks() { 
     fetch(apiUrl + "works")
-        .then(response => response.json())
+        .then(response => {
+            if (response.ok) {
+                return response.json()
+            }
+            else {
+                throw new Error("Server not responding")
+            }
+        })
         .then(works => {
             allWorks = works;
             updateGallery(allWorks);
+        })
+        .catch(error => {
+            errorContainer.textContent = "Server issues";
+            galleryContainer.classList.remove('gallery')
+            errorContainer.classList.add('errorContainer');
+            console.error('Server issues', error);
         });
 };
 

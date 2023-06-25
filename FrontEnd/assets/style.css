@@ -136,6 +136,14 @@ li:hover {
 .gallery img {
 	width: 100%;
 }
+.errorContainer{
+	color: #952929;
+    text-align: center;
+    font-size: 4.875rem;
+    margin: 9rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+}
 .filters {
 	display: flex;
 	justify-content: center;
