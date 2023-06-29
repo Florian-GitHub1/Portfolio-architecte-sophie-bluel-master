@@ -57,7 +57,7 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
 }
 section {
 	margin: 50px 0
@@ -97,6 +97,13 @@ nav li {
 }
 
 li:hover {
+	color: #B1663C;
+}
+#login-text{
+	text-decoration: none;
+	color: #000000;
+}
+#login-text:hover{
 	color: #B1663C;
 }
 #introduction {
@@ -221,5 +228,11 @@ footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
+}
+
+
+/* Hidden elements */
+.hidden {
+	display: none !important;
 }
 

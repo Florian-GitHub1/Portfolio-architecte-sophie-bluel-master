@@ -98,3 +98,20 @@ filtersAppartments.addEventListener('click', filterAppartmentsClick);
 filtersHotels.addEventListener('click', filterHotelsClick);
 
 fetchWorks();
+
+// Login 
+
+const loginText = document.getElementById('login-text')
+
+const userAuthenticated = typeof localStorage.getItem('token') === 'string'
+
+if (userAuthenticated) {
+    loginText.innerText = "logout"
+    const hiddenElements = document.querySelectorAll('.hidden')
+    hiddenElements.forEach(element => {
+        element.classList.remove('hidden');
+    });
+
+}
+
+// Modal
