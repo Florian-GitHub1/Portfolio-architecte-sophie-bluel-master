@@ -102,16 +102,24 @@ fetchWorks();
 // Login 
 
 const loginText = document.getElementById('login-text')
+const logOutText = document.getElementById('logout-text')
 
 const userAuthenticated = typeof localStorage.getItem('token') === 'string'
 
 if (userAuthenticated) {
-    loginText.innerText = "logout"
-    const hiddenElements = document.querySelectorAll('.hidden')
+    const hiddenElements = document.querySelectorAll('.hidden');
+    const filtersHidden = document.getElementById('filtersActive');
+    filtersHidden.classList.add('hidden');
+    loginText.classList.add('hidden')
     hiddenElements.forEach(element => {
         element.classList.remove('hidden');
     });
+}
 
+logOutText.addEventListener('click', clearLocalStorage)
+
+function clearLocalStorage(){
+    localStorage.clear();
 }
 
 // Modal

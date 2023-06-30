@@ -2,7 +2,7 @@ const inputEmail = document.getElementById('email')
 const inputPassword = document.getElementById('password')
 const submitButton = document.getElementById('connexion')
 const loginForm = document.querySelector('form')
-const errorContainer = document.getElementById('error-container')
+const logError = document.getElementById('error-Container')
 
 loginForm.addEventListener('submit', (event) => {
     event.preventDefault() // no page reload
@@ -35,8 +35,8 @@ loginForm.addEventListener('submit', (event) => {
         })
 
         .catch(error => {
-            errorContainer.textContent = "E-mail ou mot de passe incorrect"
-            errorContainer.classList.add('error-Container');
+            logError.textContent = "E-mail ou mot de passe incorrect"
+            logError.classList.add('error-Container');
             console.error('Server issues', error);
         })
 })

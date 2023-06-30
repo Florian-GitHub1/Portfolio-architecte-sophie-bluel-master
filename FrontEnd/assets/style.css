@@ -49,8 +49,6 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
-	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
@@ -58,6 +56,17 @@ header {
 	display: flex;
 	justify-content: space-between;
 	margin: 50px 0;
+	max-width: 1140px;
+    margin-left: auto;
+	margin-right: auto;
+}
+main{
+	max-width: 1140px;
+    margin: auto;
+}
+footer{
+	max-width: 1140px;
+    margin: auto;
 }
 section {
 	margin: 50px 0
@@ -94,16 +103,57 @@ nav ul {
 nav li {
 	padding: 0 10px;
 	font-size: 1.2em;
+	cursor: pointer;
 }
-
+header nav ul li a{
+	text-decoration: none;
+	color: #000;
+}
+header nav ul li a:hover{
+	color: #B1663C;
+}
 li:hover {
 	color: #B1663C;
 }
-#login-text{
+
+.modif_header{
+	display: flex;
+    justify-content: center;
+    background-color: #000000;
+    height: 59px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+	align-content: center;
+}
+
+.modif_header p{
+	color: white;
+	margin-right: 3em;
+	cursor: pointer;
+}
+
+.modif_header input[type="submit"]{
+	color: #000;
+	font-size: 14px;
+	font-family: Work Sans;
+	font-style: normal;
+	font-weight: 500;
+	border-radius: 60px;
+	background: #FFF;
+	margin: 0;
+	width: fit-content;
+	padding: 0.8em 2em;
+    border: none;
+	height: 38px;
+	cursor: pointer;
+}
+
+.login-text{
 	text-decoration: none;
 	color: #000000;
 }
-#login-text:hover{
+.login-text:hover{
 	color: #B1663C;
 }
 #introduction {
@@ -112,6 +162,10 @@ li:hover {
 }
 #introduction figure {
 	flex: 1
+}
+#introduction figure p {
+	margin: 10px 0px 0px 57px;
+	cursor: pointer;
 }
 #introduction img {
 	display: block;
@@ -131,8 +185,19 @@ li:hover {
 }
 #portfolio h2 {
 	text-align: center;
-	margin-bottom: 1em;
+	margin: 1em;
 }
+
+.project{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project p{
+	cursor: pointer;
+}
+
 .gallery {
 	width: 100%;
 	display: grid;
