@@ -3,6 +3,8 @@ const errorContainer = document.getElementById('errorContainer') ;
 const galleryDiv = document.getElementById('galleryContainer');
 filtersError = document.getElementById('filtersError');
 
+// Gallery
+
 function updateGallery(works) {
     const gallery = document.getElementsByClassName('gallery')[0]
     gallery.innerHTML = ""   // remove the gallery content
@@ -55,6 +57,8 @@ function fetchWorks() {
             console.error('Server issues', error);
         });
 };
+
+// Filters
 
 filtersAll.classList.add('active')
 let filtersElem = document.querySelectorAll('.filters, button');

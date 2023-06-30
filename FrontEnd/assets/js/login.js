@@ -37,6 +37,6 @@ loginForm.addEventListener('submit', (event) => {
         .catch(error => {
             logError.textContent = "E-mail ou mot de passe incorrect"
             logError.classList.add('error-Container');
-            console.error('Server issues', error);
+            console.error(error);
         })
 })
