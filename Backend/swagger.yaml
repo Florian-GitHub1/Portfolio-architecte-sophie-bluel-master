@@ -16,9 +16,9 @@ paths:
             schema:
               type: object
               properties:
-                email:
+                email: 
                   type: string
-                password:
+                password: 
                   type: string
       responses:
         '200':

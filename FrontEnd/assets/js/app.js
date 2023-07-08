@@ -12,6 +12,7 @@ function updateGallery(works) {
 
     works.forEach(work => {
         const figure = document.createElement('figure')
+        figure.setAttribute("data-id", work.id)
         const image = document.createElement('img')
         const figcaption = document.createElement('figcaption')
         image.src = work.imageUrl;
@@ -110,7 +111,7 @@ fetchWorks();
 const loginText = document.getElementById('login-text')
 const logOutText = document.getElementById('logout-text')
 
-const token = typeof localStorage.getItem('token') === 'string'
+const token = localStorage.getItem('token');
 
 if (token) {
     const hiddenElements = document.querySelectorAll('.hidden');
@@ -153,7 +154,6 @@ function displayModal(worksArray) {
                 <p>éditer</p>
             </figure>
         `;
-    
     })
     modalGallery.innerHTML = modalContentHTML;
 
@@ -167,15 +167,20 @@ function displayModal(worksArray) {
         }
     };
 
-    modalDeleteWorkIcon.forEach((trashcan) => {
-        trashcan.addEventListener("click", () => {
-            const workId = trashcan.getAttribute("data-id");
+    modalDeleteWorkIcon.forEach((deleteIcon) => {
+        deleteIcon.addEventListener("click", (event) => {
+            event.preventDefault()
+            const workId = deleteIcon.getAttribute("data-id");
+            console.log(workId)
             fetch(`http://localhost:5678/api/works/${workId}`, deleteRequest)
                 .then((res) => {
                     if (res.ok) {
-                        trashcan.parentElement.remove();
-                        const deletefigure = document.querySelector(`figure[data-id="${workId}"]`);
-                        deletefigure.remove();
+                        deleteIcon.parentElement.remove();
+                        const deleteFigure = document.querySelector(`figure[data-id="${workId}"]`);
+                        deleteFigure.remove();
+                    }
+                    else {
+                        throw new Error("Can't fetch")
                     }
                 });
         });
