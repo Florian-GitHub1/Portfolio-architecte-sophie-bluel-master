@@ -3,6 +3,7 @@ const errorContainer = document.getElementById('errorContainer') ;
 const galleryDiv = document.getElementById('galleryContainer');
 filtersError = document.getElementById('filtersError');
 
+
 // Gallery
 
 function updateGallery(works) {
@@ -49,6 +50,7 @@ function fetchWorks() {
         .then(works => {
             allWorks = works;
             updateGallery(allWorks);
+            displayModal(allWorks);
         })
         .catch(error => {
             errorContainer.textContent = "Server issues";
@@ -108,9 +110,9 @@ fetchWorks();
 const loginText = document.getElementById('login-text')
 const logOutText = document.getElementById('logout-text')
 
-const userAuthenticated = typeof localStorage.getItem('token') === 'string'
+const token = typeof localStorage.getItem('token') === 'string'
 
-if (userAuthenticated) {
+if (token) {
     const hiddenElements = document.querySelectorAll('.hidden');
     const filtersHidden = document.getElementById('filtersActive');
     filtersHidden.classList.add('hidden');
@@ -127,3 +129,56 @@ function clearLocalStorage(){
 }
 
 // Modal
+
+const modalContainer = document.querySelector('.modal-container');
+const modalTriggers = document.querySelectorAll('.modal-trigger');
+const modalGallery = document.querySelector(".modal-gallery");
+const deleteWorkModal = document.querySelectorAll('.modal-icone');
+
+modalTriggers.forEach(trigger => trigger.addEventListener("click", toggleModal));
+
+function toggleModal(){
+    modalContainer.classList.toggle("active");
+}
+
+function displayModal(worksArray) {
+    let modalContentHTML = "";
+    worksArray.forEach((work) => {
+        modalContentHTML += `
+            <figure class="modal-gallery_img">
+                <img src="${work.imageUrl}">
+                <div class="modal-icon">
+                    <i class="fa-solid fa-trash-can modal-trash_icon" data-id="${work.id}"></i>
+                </div>
+                <p>éditer</p>
+            </figure>
+        `;
+    
+    })
+    modalGallery.innerHTML = modalContentHTML;
+
+    const modalDeleteWorkIcon = document.querySelectorAll(".modal-trash_icon");
+
+    // Delete work
+    let deleteRequest = {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    };
+
+    modalDeleteWorkIcon.forEach((trashcan) => {
+        trashcan.addEventListener("click", () => {
+            const workId = trashcan.getAttribute("data-id");
+            fetch(`http://localhost:5678/api/works/${workId}`, deleteRequest)
+                .then((res) => {
+                    if (res.ok) {
+                        trashcan.parentElement.remove();
+                        const deletefigure = document.querySelector(`figure[data-id="${workId}"]`);
+                        deletefigure.remove();
+                    }
+                });
+        });
+    });
+}
+

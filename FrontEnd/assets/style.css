@@ -301,3 +301,121 @@ footer nav ul {
 	display: none !important;
 }
 
+.modal-container.active{
+	display: block;
+}
+
+.modal-container{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.overlay{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #33333352;
+    backdrop-filter: blur(3px);
+}
+
+.modal{
+	width: 95%;
+	max-width: 630px;
+	padding: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	background: #FFF;
+	transform: translate(-50%, -50%);
+}
+
+.modal button{
+	background-color: transparent;
+	border: none;
+	float: right;
+}
+
+.close-modal{
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+}
+
+.modal-title{
+	color: #000;
+	text-align: center;
+	font-family: Work Sans;
+	font-size: 26px;
+	font-style: normal;
+	font-weight: 400;
+	margin: 60px 0px 60px 0;
+}
+
+.modal-gallery{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-column-gap: 9px;
+	margin: 46px 100px 65px 100px;
+	position: relative;
+}
+
+.modal-gallery_img{
+	position: relative;
+	margin-bottom: 9px;
+}
+
+.modal-gallery_img img{
+	width: 100%;
+	height: 104.08px;
+}
+
+.modal-icon{
+	cursor: pointer;
+	position: absolute;
+	padding: 1px 5px 3px 5px;
+    border-radius: 3px;
+    top: 4%;
+    right: 6%;
+	background-color: #000000;
+}
+
+.modal-trash_icon{
+	color: #FFF;
+	font-size: 10px;
+}
+
+
+hr{
+	border: 1px #B3B3B3 solid;
+	width: 420px;
+}
+
+.add-button{
+	width: 237px;
+	height: 36px;
+	margin: 38px 0px 23px 195px;
+	border-radius: 60px;
+	background: #1D6154;
+	border: none;
+	color: #FFF;
+	text-align: center;
+	font-family: Syne, sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.delete-button{
+	cursor: pointer;
+	text-align: center;
+	margin-bottom: 48px;
+	color: #D65353;
+	text-align: center;
+	font-family: Syne;
+	font-size: 14px;
+	font-weight: 400;
+}
