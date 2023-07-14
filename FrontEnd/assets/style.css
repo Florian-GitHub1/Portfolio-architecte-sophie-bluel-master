@@ -337,13 +337,22 @@ footer nav ul {
 .modal button{
 	background-color: transparent;
 	border: none;
-	float: right;
+	position: absolute;
+    top: 27px;
+    right: 30px;
+	font-size: 12px;
 }
 
 .close-modal{
 	cursor: pointer;
 	width: 24px;
 	height: 24px;
+	background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 27px;
+    right: 30px;
+    font-size: 12px;
 }
 
 .modal-title{
@@ -353,7 +362,7 @@ footer nav ul {
 	font-size: 26px;
 	font-style: normal;
 	font-weight: 400;
-	margin: 60px 0px 60px 0;
+	margin: 60px 0px 45px 0;
 }
 
 .modal-gallery{
@@ -391,7 +400,7 @@ footer nav ul {
 
 
 hr{
-	border: 1px #B3B3B3 solid;
+	border: 1px #b3b3b373 solid;
 	width: 420px;
 }
 
@@ -419,3 +428,183 @@ hr{
 	font-size: 14px;
 	font-weight: 400;
 }
+
+.modal-return-icon{
+	cursor: pointer;
+	width: 24px;
+	height: 24px;
+	background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 27px;
+    left: 30px;
+	font-size: 12px;
+}
+
+.modal-addwork{
+	display: none;
+	width: 95%;
+	max-width: 630px;
+	padding: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	background: #FFF;
+	transform: translate(-50%, -50%);
+}
+
+.modal-content_addwork{
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content_addwork form{
+	margin-bottom: 47px;
+}
+
+.modal-content_addwork_img{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 3px;
+	background: #E8F1F6;
+	height: 169px;
+}
+
+#uploadButton{
+	display: none;
+}
+
+.modal-content_addwork_img_selected{
+	width: 129px;
+    height: 193px;
+    object-fit: cover;
+}
+
+.modal-content_addwork_img i{
+	color: #B9C5CC;
+	font-size: 58px;
+	padding: 45px;
+}
+
+.modal-content_addwork_img_button{
+	cursor: pointer;
+	border-radius: 50px;
+	background: #CBD6DC;
+	width: 173px;
+	padding: 10px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #306685;
+	text-align: center;
+	font-family: Work Sans, sans-serif;
+	margin: 10px 0px 10px 0px;
+}
+
+.modal-content_addwork_img p{
+	margin: 10px 0px 10px 0px;
+	color: #444;
+	text-align: center;
+	font-family: Work Sans;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+#photo{
+	display: none;
+}
+
+.modal-content_addwork_img_info{
+	padding: 9px 0px 15px 0px;
+}
+
+.form-fields{
+	display: flex;
+	flex-direction: column;
+	margin: 10px 0 30px 0;
+}
+
+.form-fields label{
+	color: #3D3D3D;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	margin:  20px 0 10px 0;
+}
+
+.form-fields input{
+	padding-left: 16px;
+	color: #444;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	height: 51px;
+	background: #FFF;
+	border: none;
+	box-shadow: 2px 5px 15px 5px rgba(199, 199, 199, 0.267);
+}
+
+.form-fields input:focus-visible{
+	outline: none;
+}
+
+.form-fields select{
+	padding-left: 16px;
+	color: #444;
+	font-family: Work Sans;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	height: 51px;
+	background: #FFF;
+	border: none;
+	box-shadow: 2px 5px 15px 5px rgba(199, 199, 199, 0.267);
+}
+
+.form-fields select:focus-visible{
+	outline: none;
+}
+
+.modal-content_addwork_inputs_title{
+	display: flex;
+	flex-direction: column;
+}
+
+.modal-content_addwork_inputs_categorie{
+	display: flex;
+	flex-direction: column;
+}
+
+.add-button_form{
+	width: 237px;
+	height: 36px;
+	margin: 0px 0px 23px 0px;
+	border-radius: 60px;
+	background: #A7A7A7;
+	border: none;
+	color: #FFF;
+	text-align: center;
+	font-family: Syne, sans-serif;
+	font-size: 14px;
+	cursor: pointer;
+	margin: 15px 0px 0 90px;
+}
+
+.add-button_form_succes{
+	background: #1D6154;
+}
+
+.active{
+	display: block;
+}
+
+.none{
+	display: none;
+}
+
