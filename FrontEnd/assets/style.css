@@ -453,6 +453,7 @@ footer nav ul {
 
 .modal-gallery_img {
     position: relative;
+    object-fit: cover;
 }
 
 .modal-gallery_img img {
