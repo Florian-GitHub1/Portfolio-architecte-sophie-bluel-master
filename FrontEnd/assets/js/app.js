@@ -41,7 +41,6 @@ function updateGallery(works) {
     });
 }
 
-
 function addWorkToGallery(work) {
     const gallery = document.getElementById("galleryContainer");
     const figure = document.createElement("figure");
@@ -59,7 +58,7 @@ function addWorkToGallery(work) {
 
 // -------------------------------------------------------------------------------------------------------------------------------
 
-//Filtes
+//Filtres
 fetch("http://localhost:5678/api/categories")
     .then((response) => response.json())
     .then((categories) => {
@@ -98,7 +97,6 @@ function filterAll() {
     updateGallery(allWorks); // Met à jour la gallerie avec tous les projets
 }
 
-
 // Login
 const loginText = document.getElementById("login-text");
 const logOutText = document.getElementById("logout-text");
@@ -121,7 +119,6 @@ logOutText.addEventListener("click", clearLocalStorage);
 function clearLocalStorage() {
     localStorage.clear();
 }
-
 
 // Modal
 const modalContainer = document.querySelector(".modal-container");
@@ -319,10 +316,9 @@ function addPhoto(event) {
     }
 }
 
-// Détecte les changements au niveau du bouton d'upload de l'image 
+// Détecte les changements au niveau du bouton d'upload de l'image
 const fileInput = document.getElementById("uploadButton");
 fileInput.addEventListener("change", (event) => addPhoto(event));
-
 
 // Vérification des condition pour soumettre un nouveau travail
 function setupFormValidation() {
