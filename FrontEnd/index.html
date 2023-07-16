@@ -84,22 +84,12 @@
                         <i class="fa-regular fa-pen-to-square"></i> modifier
                     </p>
                 </div>
-                <div class="filters" id="filtersActive">
-                    <button class="" id="filters-all">Tous</button>
-                    <button class="" id="filters-objects">Objets</button>
-                    <button class="" id="filters-appartments">
-                        Appartements
-                    </button>
-                    <button class="" id="filters-hotels">
-                        Hôtels & restaurants
-                    </button>
+                <div class="filters" id="filterContainer">
+                    <!-- Générer dynamiquement en js -->
                 </div>
                 <div class="gallery" id="galleryContainer">
                     <div id="errorContainer"></div>
-                    <!-- <figure>
-                      <img src="assets/images/abajour-tahina.png" alt="Abajour Tahina">
-                      <figcaption>Abajour Tahina</figcaption>
-				            </figure> -->
+                    <!-- Générer dynamiquement en js -->
                 </div>
             </section>
             <section id="contact">
@@ -151,21 +141,48 @@
                         <form class="form" id="form">
                             <div class="modal-content_addwork_img">
                                 <i class="fa-regular fa-image fa-2xl"></i>
-                                <label for="uploadButton" class="modal-content_addwork_img_button" id="uploadButtonLabel">+ Ajouter photo</label>
-                                <input type="file" accept="image/jpeg, image/png" id="uploadButton">
-                                <div id="photo-preview" class="photo-preview"></div>
+                                <label
+                                    for="uploadButton"
+                                    class="modal-content_addwork_img_button"
+                                    id="uploadButtonLabel"
+                                    >+ Ajouter photo</label
+                                >
+                                <input
+                                    type="file"
+                                    accept="image/jpeg, image/png"
+                                    id="uploadButton"
+                                />
+                                <div
+                                    id="photo-preview"
+                                    class="photo-preview"
+                                ></div>
                                 <p>jpg, png : 4mo max</p>
                             </div>
                             <div class="form-fields">
                                 <label for="workTitle">Titre</label>
-                                <input type="text" id="workTitle" class="modal-input" required>
+                                <input
+                                    type="text"
+                                    id="workTitle"
+                                    class="modal-input"
+                                    required
+                                />
                                 <label for="workCategory">Catégorie</label>
-                                <select id="workCategory" class="modal-input" required>
+                                <select
+                                    id="workCategory"
+                                    class="modal-input"
+                                    required
+                                >
                                     <!-- Générer dynamiquement en js -->
                                 </select>
                             </div>
-                            <hr>
-                            <button type="submit" class="add-button_form" id="submitButtonModal">Valider</button>
+                            <hr />
+                            <button
+                                type="submit"
+                                class="add-button_form"
+                                id="submitButtonModal"
+                            >
+                                Valider
+                            </button>
                         </form>
                     </div>
                 </div>
